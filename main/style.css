@@ -1,9 +1,15 @@
+/*-----------------------------------*\
+#RESET
+\*-----------------------------------*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/*-----------------------------------*\
+  #BASE
+\*-----------------------------------*/
 html,
 body,
 .wrapper {
@@ -17,18 +23,22 @@ body {
   background-color: #f9fbfd;
 }
 
-.wrapper {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
 }
+
+.wrapper {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/*-----------------------------------*\
+  #PASSWORD CARD
+\*-----------------------------------*/
 
 .card {
   background-color: hsl(0, 0%, 100%);
@@ -49,6 +59,38 @@ header {
   background: #e7e9eb;
   height: 2px;
 }
+
+/* COPY ICON */
+.pas_box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.pas_box i {
+  font-size: 2em;
+  color: rgba(0, 0, 0, 0.50);
+  /* right: 0; */
+  position: absolute;
+  right: 320px;
+  top: 260px;
+}
+
+.pas_box i:hover {
+  color: rgba(0, 0, 0, 0.30);
+}
+
+/* COPY TEXT */
+.copied-text {
+  display: none;
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.50);
+  position: absolute;
+  right: 320px;
+  top: 260px;
+}
+
 
 .card-body {
   min-height: 100px;
@@ -117,6 +159,10 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
 
 @media (max-width: 690px) {
   .btn {

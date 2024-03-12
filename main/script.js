@@ -212,4 +212,40 @@ var specialCharacters = [
   // Add event listener to generate button
   generateBtn.addEventListener('click', writePassword);
   
-  
+
+// Get reference to the copy icon
+var copyIcon = document.querySelector('.bx-copy-alt');
+
+// Get reference to the copy icon and the copied text
+var copyIcon = document.querySelector('.bx-copy-alt');
+var copiedText = document.querySelector('.copied-text');
+
+// Add event listener to copy icon
+copyIcon.addEventListener('click', function() {
+  // Get the password from the textarea
+  var passwordText = document.querySelector('#password');
+  var password = passwordText.value;
+
+  // Check if the password field is empty
+  if (!password) {
+    // If password is empty, return without copying
+    return;
+}
+  // Copy the password to the clipboard
+  navigator.clipboard.writeText(password).then(function() {
+      // Show the "Copied" text and hide the copy icon
+      copiedText.style.display = 'inline';
+      copyIcon.style.display = 'none';
+
+      // Reset after 2 seconds
+      setTimeout(function() {
+          copiedText.style.display = 'none';
+          copyIcon.style.display = 'inline';
+      }, 2000);
+  }, function(err) {
+      // Handle any errors that may occur while copying
+      console.error('Could not copy password: ', err);
+      alert('Failed to copy password to clipboard.');
+  });
+});
+
