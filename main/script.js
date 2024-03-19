@@ -217,7 +217,6 @@ var specialCharacters = [
 var copyIcon = document.querySelector('.bx-copy-alt');
 
 // Get reference to the copy icon and the copied text
-var copyIcon = document.querySelector('.bx-copy-alt');
 var copiedText = document.querySelector('.copied-text');
 
 // Add event listener to copy icon
